@@ -1,0 +1,28 @@
+.todo {
+  background-color: gainsboro;
+  box-shadow: 1px 1px 1px #fff;
+  border: 1px solid #ececec;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.todo:hover {
+  cursor: pointer;
+}
+
+.todo-title {
+  margin: 0.5rem;
+  padding: 0;
+}
+
+.input {
+  width: 250px;
+  height: 35px;
+  margin-block: 0.5rem;
+}
+
+.todo.reminder {
+  border-left: 5px solid #008000;
+}

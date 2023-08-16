@@ -1,0 +1,7 @@
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* width: min(75%, 800px); */
+}

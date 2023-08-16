@@ -1,0 +1,13 @@
+<input
+  placeholder="Enter the text here"
+  *ngIf="!isDisabled"
+  [disabled]="isDisabled"
+  [value]="enteredText"
+  (input)="onTextEnter($event)"
+/>
+<p>{{ !isDisabled ? enteredText : "Please wait ...." }}</p>
+
+<br />
+<hr />
+<input type="text" placeholder="Please enter Text" [(ngModel)]="twoWayText" />
+<p>{{ twoWayText }}</p>

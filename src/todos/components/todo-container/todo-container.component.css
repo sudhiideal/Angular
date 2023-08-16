@@ -1,0 +1,7 @@
+.wrapper {
+  width: min(75%, 600px);
+  min-height: 400px;
+  padding-inline: 5%;
+
+  border: 1px solid;
+}

@@ -1,0 +1,25 @@
+.form {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  margin: 1rem;
+}
+
+.form-control .input {
+  width: min(90%, 400px);
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 15%;
+  color: #fff;
+  background-color: #1da1f2;
+}
+
+.border-red {
+  border: 1px solid red;
+}
+.border-transperant {
+  border: 1px solid transparent;
+}

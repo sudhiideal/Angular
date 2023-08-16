@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UtilityModule } from 'src/utility/utility.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppContainerComponent } from './components/app-container/app-container.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, NavbarComponent, AppContainerComponent],
+  imports: [BrowserModule, AppRoutingModule, UtilityModule],
+  // exports: [HeaderModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

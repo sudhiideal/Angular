@@ -1,0 +1,24 @@
+<div
+  class="todo"
+  [ngClass]="{ reminder: todo.completed }"
+  (dblclick)="onToggleStatus(todo)"
+>
+  <h4 class="todo-title" *ngIf="!isEditEnabled">{{ todo.title }}</h4>
+  <input
+    class="input"
+    *ngIf="isEditEnabled"
+    type="text"
+    [(ngModel)]="todo.title"
+  />
+  <div class="todo-actions">
+    <app-button
+      [text]="editText"
+      (btnClick)="onUpdate(todo)"
+    ></app-button>
+    <app-button
+      color="#C70000"
+      text="Delete"
+      (btnClick)="onDelete(todo.id)"
+    ></app-button>
+  </div>
+</div>

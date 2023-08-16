@@ -1,0 +1,11 @@
+<div class="app-header">
+  <header>
+    <h1>{{ appHeader }}</h1>
+  </header>
+  <app-button
+    color="#4267B2"
+    text="{{ canShow ? 'Close' : 'Add' }}"
+    (btnClick)="onAdd()"
+  ></app-button>
+</div>
+<hr />

@@ -1,0 +1,23 @@
+<form *ngIf="canShowForm" class="form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label for="title">Task : </label>
+    <input
+      id="title"
+      class="input"
+      type="text"
+      [(ngModel)]="title"
+      [ngClass]="{ 'border-red': !isFormValid }"
+      name="title"
+    />
+    <label for="completed">Status : </label>
+    <input
+      id="completed"
+      type="checkbox"
+      [(ngModel)]="completed"
+      name="completed"
+    />
+  </div>
+  <div class="form-control">
+    <input type="submit" class="btn" value="Save" />
+  </div>
+</form>
