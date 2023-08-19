@@ -9,6 +9,7 @@ import { TodoService } from '../../services/todo.service';
 })
 export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
+  error: string = '';
 
   constructor(private todoService: TodoService) {}
 
@@ -23,15 +24,26 @@ export class TodoListComponent implements OnInit {
   }
 
   fetchTodos(): void {
-    this.todoService
-      .fetchTodos()
-      .subscribe((data) => (this.todos = data));
+    this.todoService.fetchTodos().subscribe({
+      // (data) => (this.todos = data)
+      next: (data) => {
+        this.todos = data;
+        console.log(this.todos);
+      },
+      error: (e) => (this.error = e.message),
+      complete: () => console.info('complete'),
+    });
   }
 
   updateTodo(todo: Todo): void {
-    this.todoService.updateTodos(todo).subscribe((data) => {
-      console.log(data);
-    });
+    this.todoService.updateTodos(todo).subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (err) => {
+        this.error = 'Oops! Something went wrong!';
+      }
+    );
   }
 
   handleTodoAdd(todo: Todo): void {

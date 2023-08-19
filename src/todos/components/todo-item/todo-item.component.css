@@ -1,6 +1,6 @@
 .todo {
-  background-color: gainsboro;
-  box-shadow: 1px 1px 1px #fff;
+  background-color: #fff;
+  box-shadow: 5px 5px 5px 5px #ececec;
   border: 1px solid #ececec;
 
   display: flex;
@@ -25,4 +25,8 @@
 
 .todo.reminder {
   border-left: 5px solid #008000;
+}
+
+.margin-right {
+  margin-right: 0.5rem;
 }

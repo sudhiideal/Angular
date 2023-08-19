@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import {} from 'rxjs/operators';
 
 @Injectable({
@@ -7,7 +7,7 @@ import {} from 'rxjs/operators';
 })
 export class UiService {
   private canShow: boolean = false;
-  subject: Subject<boolean> = new Subject();
+  subject: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor() {}
 

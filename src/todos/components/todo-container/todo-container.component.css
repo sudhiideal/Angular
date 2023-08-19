@@ -3,5 +3,7 @@
   min-height: 400px;
   padding-inline: 5%;
 
-  border: 1px solid;
+  border: 1px solid #fff;
+  box-shadow: 5px 5px 5px 5px #ececec;
+  margin: auto;
 }

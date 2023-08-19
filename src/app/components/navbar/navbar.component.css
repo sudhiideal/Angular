@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  gap: 2rem;
+  min-height: 3rem;
+
+  background-color: #4267b2;
+}
+
+.navbar li {
+  list-style: none;
+  margin-block: 1rem;
+  font-size: 1.5rem;
+}
+
+.navbar li a {
+  color: #fff;
+}

@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Todo } from '../interfaces/Todo';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,7 +21,15 @@ export class TodoService {
   constructor(private http: HttpClient) {}
 
   fetchTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(this.url);
+    return this.http.get<Todo[]>(this.url).pipe(
+      catchError((err: HttpErrorResponse) => {
+        console.log(err);
+        return throwError(
+          () =>
+            new Error('Something bad happened; please try again later.')
+        );
+      })
+    );
   }
 
   updateTodos(todo: Todo): Observable<Todo> {

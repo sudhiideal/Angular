@@ -1,8 +1,15 @@
 <app-todo-add (onAdd)="handleTodoAdd($event)"></app-todo-add>
 
+<img
+  class="margin-left"
+  [ngClass]="{ 'hide-loading': todos.length ? true : false }"
+  src="assets/loading.gif"
+  alt="loading"
+/>
 <app-todo-item
   *ngFor="let todo of todos"
   [todo]="todo"
   (onDeleteTask)="deleteTodo(todo.id)"
   (onUpdateTask)="updateTodo(todo)"
 ></app-todo-item>
+{{ error }}

@@ -26,6 +26,6 @@ import { TodoService } from './services/todo.service';
     FormsModule,
     TodoRoutingModule,
   ],
-  exports: [TodoContainerComponent],
+  // exports: [TodoContainerComponent],
 })
 export class TodosModule {}
