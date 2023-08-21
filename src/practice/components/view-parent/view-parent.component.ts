@@ -10,7 +10,7 @@ export class ViewParentComponent implements AfterViewInit {
   @ViewChild('child') childRef!: ChildComponent;
 
   ngAfterViewInit(): void {
-    console.log(this.childRef);
+    console.log('ngAfterViewInit', this.childRef);
   }
 
   handleIncrement() {
